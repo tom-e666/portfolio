@@ -1,0 +1,189 @@
+@use 'color';
+@use 'nav_bar';
+@mixin play-write-vn-thin {
+                 font-family: "Playwrite VN", cursive;
+                 font-optical-sizing: auto;
+                 font-weight: 100;
+                 font-style: normal;
+               }
+@mixin alignment{
+  padding-left: 24px;
+  padding-right: 24px;
+  justify-content: center;
+}
+@mixin heading{
+  color: color.$blue;
+  font-family: "fantasy","Tahoma";
+  font-size: 50px;
+  @include alignment;
+}
+
+.content{
+  color:deepskyblue;
+  font-size: 50px;
+  justify-content: center;
+  @include play-write-vn-thin;
+  @include alignment;
+}
+html{
+  color:#222222;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+::-moz-selection{
+  background:#b3d4fc;
+  text-shadow:none;
+}
+::selection{
+  background:#b3d4fc;
+  text-shadow:none;
+}
+hr{
+  display:block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #b3d4fc;
+  margin: 1em 0;
+  padding:0;
+}
+audio,canvas,iframe,img,video{
+  vertical-align: middle;
+}
+textarea{
+  resize:vertical;
+}
+//helper
+//media
+@media only screen and (min-width: 35em){
+
+}
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  // Style adjustments for high resolution devices
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+// print.scss
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+.section-heading{
+  @include heading
+}
+.section-placeholder {
+  background-color: rgba(0, 0, 255, 0.2); // Example semi-transparent blue background
+  border: 2px dashed rgba(0, 0, 255, 0.5); // Example dashed border for visibility
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1000px;
+}
